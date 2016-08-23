@@ -2,8 +2,7 @@
 addons:
  apt:
    packages:
-   - gcc-4.8
-   - g++-4.8
+   - build-essential
    - cmake
    - time
 before_install:
