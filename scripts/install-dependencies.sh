@@ -1,0 +1,4 @@
+uname -
+pwd
+hostname
+ifconfig
