@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "6"
+  - "6.1"
+  - "6.2.2"
+addons:
+ apt:
+   packages:
+   - gcc-4.8
+   - g++-4.8
+   - cmake
+   - time
+install: ./scripts/install-dependencies.sh
