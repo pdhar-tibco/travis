@@ -11,8 +11,6 @@ addons:
    - libssl-dev
 before_install:
   - sudo apt-get update -qq
-  - which node
-  - nvm ls-remote
   - nvm install ${NODE_VERSION}
   - node --version
   - sudo rm /usr/local/bin/docker-compose
