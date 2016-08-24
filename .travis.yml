@@ -3,6 +3,7 @@ language: node_js
   - "6.4.0"
 env:
   DOCKER_COMPOSE_VERSION: 1.8.0
+  NODE_VERSION:6.4.0
 addons:
  apt:
    packages:
@@ -12,13 +13,13 @@ before_install:
   - sudo apt-get update -qq
   - which node
   - nvm ls-remote
-  - nvm install 6.4.0
+  - nvm install ${NODE_VERSION}
   - node --version
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - docker pull golang:1.6.2-alpine
+  - docker pull mhart/alpine-node:${NODE_VERSION}
 install: ./scripts/install-dependencies.sh
 script: ./scripts/build.sh
 after_success:
