@@ -3,11 +3,9 @@ addons:
  apt:
    packages:
    - build-essential
-   - cmake
-   - time
 before_install:
 - sudo apt-get update -qq
-- sudo apt-get install -qq nodejs
+- curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && sudo apt-get install -y nodejs
 - npm install -g gulp
 - node --version
 install: ./scripts/install-dependencies.sh
