@@ -42,8 +42,8 @@ COPY go-wrapper /usr/local/bin/
 
 WORKDIR /tmp/travis
 
-COPY dist/ /tmp/travis
-COPY *.json /tmp/travis
+COPY dist/ /tmp/travis/
+COPY *.json /tmp/travis/
 RUN  npm install
 
 
