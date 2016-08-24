@@ -3,9 +3,10 @@ addons:
  apt:
    packages:
    - build-essential
+   - libssl-dev
 before_install:
 - which node
-- which nodejs
+- nvm ls-remote
 - sudo apt-get update -qq
 - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && sudo apt-get install -y nodejs
 - npm install -g gulp
