@@ -8,3 +8,6 @@ readonly BUILD_ROOT=$(
 )
 
 gulp build
+
+docker build -t pdhar/travis .
+
