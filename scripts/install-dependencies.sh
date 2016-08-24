@@ -1,4 +1,3 @@
-uname -
-pwd
-hostname
-ifconfig
+npm install
+
+typings install

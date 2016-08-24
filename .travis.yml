@@ -5,11 +5,10 @@ addons:
    - build-essential
    - libssl-dev
 before_install:
+- sudo apt-get update -qq
 - which node
 - nvm ls-remote
-- sudo apt-get update -qq
-- curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && sudo apt-get install -y nodejs
-- npm install -g gulp
+- nvm install 6.4.0
 - node --version
 install: ./scripts/install-dependencies.sh
 script: ./scripts/build.sh
