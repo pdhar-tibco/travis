@@ -10,6 +10,7 @@ addons:
    - build-essential
    - libssl-dev
 before_install:
+  - env
   - sudo apt-get update -qq
   - nvm install ${NODE_VERSION}
   - node --version
