@@ -4,9 +4,11 @@ addons:
    packages:
    - build-essential
 before_install:
+- which node
+- which nodejs
 - sudo apt-get update -qq
 - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && sudo apt-get install -y nodejs
 - npm install -g gulp
 - node --version
 install: ./scripts/install-dependencies.sh
-script: ./script/build.sh
+script: ./scripts/build.sh
