@@ -21,8 +21,16 @@ before_install:
   - docker pull mhart/alpine-node:${NODE_VERSION}
 install: ./scripts/install-dependencies.sh
 script: ./scripts/build.sh
+deploy:
+  provider: releases
+  api_key: "${GITHUB_OAUTH_TOKEN}"
+  file: "./Dockerfile"
+  skip_cleanup: true
+  on:
+    tags: true
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}";
     docker push pdhar/travis;
     fi
+
